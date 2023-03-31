@@ -1,0 +1,163 @@
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+  
+
+if (window.taValidate == undefined) {
+   window.taOnLoad   = window.onload;
+   window.taValList  = Array();
+   window.taValIndex = 0;
+   window.taValidate = function () {
+      if (window.taOnLoad != null) {
+         try {
+         window.taOnLoad();
+         } catch (err) { }
+      }
+      for (ii = 0; ii < window.taValIndex; ii=ii+1) {
+         fname = window.taValList[ii]
+         fname();
+      }
+   }
+   window.taAddValidator = function (fname) {
+      window.taValList[window.taValIndex] = fname;
+      window.taValIndex                   = window.taValIndex + 1;
+      }
+   window.onload = window.taValidate
+}
+window.taAddValidator (injectlinkingWidgetWAR7460)
+
+                  if(document.createStyleSheet) {
+        document.createStyleSheet("http://c1.tacdn.com/css2/widget/cdswidLNKR-v2430349841a.css");
+      } else {
+        var stylesImport = "@import url(' http://c1.tacdn.com/css2/widget/cdswidLNKR-v2430349841a.css ');";
+        var newSS=document.createElement('link');
+        newSS.rel='stylesheet';
+        newSS.href='data:text/css,'+escape(stylesImport);
+        if (document.getElementsByTagName("head")[0]) {
+            document.getElementsByTagName("head")[0].appendChild(newSS);
+        } else {             document.write('<link rel="stylesheet" href="data:text/css,' + escape(stylesImport) + '"/>');
+        }
+      }
+        
+      var newJs = document.createElement('script');
+    newJs.setAttribute('type', 'text/javascript');
+    newJs.setAttribute('src', 'http://c1.tacdn.com/js3/widget/cdswidgets_m-c-v3582238260a.js');
+    document.getElementsByTagName("head")[0].appendChild(newJs);
+  
+var validityRegEx = [
+    new RegExp('https?://([^/]+\.|)tripadvisor\.(com\.ar|com|ca|jp|co\.uk|de|dk|ie|fr|co\.id|com\.mx|com\.my|it|com\.br|com\.tr|com\.eg|se|in|co\.kr|com\.gr|com\.sg|com\.au|ru|es|nl|com\.tw)/.*')
+  ,  new RegExp('https?://([^/]+\.|)daodao\.(com)/.*')
+];
+
+function injectlinkingWidgetWAR7460() {
+    var container = document.getElementById('TA_linkingWidgetWAR558');
+  if (container == null) {
+        var scriptTags = document.getElementsByTagName("script");
+    for (var i=0; i<scriptTags.length; i++)
+    {
+      if (scriptTags[i] != null && scriptTags[i].src != null &&
+          scriptTags[i].src.indexOf("linkingWidgetWAR?uniq=558") >= 0)
+      {
+        var msgElem = document.createElement('div');
+        if (msgElem != null && msgElem != 'undefined')
+        {
+          msgElem.style.margin='8px';
+          msgElem.style.color='red';
+          msgElem.innerHTML="Please check the TripAdvisor code and install again.";
+          var parentElem = scriptTags[i].parentNode;
+          if (parentElem != null && parentElem != 'undefined')
+          {
+            parentElem.appendChild(msgElem);
+          }
+          break;
+        }
+      }
+    }
+    return;
+  }
+
+        var valid = true;
+  var linksNum = 0;
+      var links = container.getElementsByTagName("a");
+    for (var i=0; i<links.length; i++) {
+    var taLink = links[i];
+    var taLinkStr = taLink.href;
+    if (taLinkStr.search(/(daodao|tripadvisor)/) != -1) {
+      linksNum = linksNum + 1;
+      if (typeof(taLink.rel) != 'undefined' && taLink.rel.toLowerCase().indexOf('nofollow') >= 0) {
+        valid = false;
+        continue;
+      }
+            var linkValid = false;
+      for (var x=0; x<validityRegEx.length; x++){
+        if (taLinkStr.match(validityRegEx[x])) {
+          linkValid = true;
+          break;
+        }
+      }
+      if (!linkValid) {
+        continue;
+      }
+    }
+  }
+  if (linksNum == 0) {
+    valid = false;
+  }
+  if (!valid) {
+    var tmpStr = '<dl><dt>' + "Please check the TripAdvisor code and install again." + '</dt></dl>';
+    container.innerHTML = tmpStr;
+  } else {
+    container.innerHTML = '<div id="CDSWIDLNKR"class="border"> '+
+'<div class="widLNKRInner widLNKWrite"> '+
+'<ul> '+
+'<li id="talink" class="widLNKSml"><a href="http://www.tripadvisor.in/UserReview-g297628-d1230533-The_Zuri_Whitefield_Bangalore-Bangalore_Karnataka.html" onclick="ta.cds.handleTALink(15078,this);return true;" target="_blank">Write a review</a> of The Zuri Whitefield, Bangalore</li> '+
+'<li><a title="The Zuri Whitefield, Bangalore" href="http://www.tripadvisor.in/Hotel_Review-g297628-d1230533-Reviews-The_Zuri_Whitefield_Bangalore-Bangalore_Karnataka.html" onclick="ta.cds.handleTALink(15078,this);return true;" target="_blank"><img src="http://www.tripadvisor.in/img/cdsi/partner/tripadvisor_logo_115x18-15078-2.gif" alt="The Zuri Whitefield, Bangalore"/></a></li> '+
+'</ul> '+
+'</div> '+
+'</div> '+
+'';
+  }  
+}
+

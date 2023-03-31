@@ -1,0 +1,124 @@
+
+
+
+img
+{
+border: 0px;
+}
+
+body{
+	font: 12px Arial, Helvetica, sans-serif;
+	color: #000000;
+	line-height: 20px;
+}
+
+	
+#main {
+	width: 1014px;
+	margin: 0px auto;
+	background-color:#F8F7DF;}
+
+
+
+
+#content{
+	width: 100%;
+	background: url(../images_gall/content_text.png);
+}
+
+.cont_top{
+	background: url(../images_gall/cont_top.png) left top no-repeat;
+	height: 15px;
+	width: 100%;
+}
+
+.cont_bot{
+	background: url(../images_gall/cont_bot.png) left bottom no-repeat;
+	height: 15px;;
+	width: 100%;
+}
+
+#cont_razd{
+	background: url(../images_gall/razd_cont.gif) 726px repeat-y;
+	width: 100%;
+}
+
+
+
+
+/* index2 */
+
+.row {
+	padding: 0px 0px 0px 16px;
+	height: 180px;
+	width: 999px;
+}
+
+.box_img2 {
+	width: 308px;
+	height: 155px;
+	background: url(../images_gall/img_bg_ind3.png) 0px 0px no-repeat;
+	padding: 10px 0px 0px 10px;
+	float:left;
+}
+
+.box_razd {
+	width: 14px;
+	height: 50px;
+	float: left;
+}
+
+.box_img2 h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:24px;
+	font-weight: 100;
+	color: #002380;
+	text-align: left;
+	padding: 8px 0px 3px 0px;
+}
+
+.rol_over:hover {
+
+background:url(../images_gall/rol_over_galery.png) left top no-repeat;
+}
+
+.g_size {
+width: 298px;
+height: 123px;
+display: block;
+}
+
+.g1 {
+background:url(../images_gall/p1.jpg) left top no-repeat;} 
+.g2 {
+background:url(../images_gall/p2.jpg) left top no-repeat;}
+.g3 {
+background:url(../images_gall/p3.jpg) left top no-repeat;}
+.g4 {
+background:url(../images_gall/p4.jpg) left top no-repeat;}
+.g5 {
+background:url(../images_gall/p5.jpg) left top no-repeat;}
+.g6 {
+background:url(../images_gall/p6.jpg) left top no-repeat;}
+.g7 {
+background:url(../images_gall/p7.jpg) left top no-repeat;}
+.g8 {
+background:url(../images_gall/p8.jpg) left top no-repeat;}
+.g9 {
+background:url(../images_gall/p9.jpg) left top no-repeat;}
+
+.pirobox_gal1
+{
+width: 298px;
+height: 123px;
+display: block;
+}
+
+.pirobox_gal1:hover
+{
+width: 298px;
+height: 123px;
+display: block;
+background:url(../images_gall/rol_over_galery.png) left top no-repeat;
+}
+

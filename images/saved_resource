@@ -1,0 +1,82 @@
+function isAffiliate () {
+	var searchString = String(window.location);
+	var Parameters = new Object();
+	var nameValuePairs = searchString.split(/&/);
+	var nameValuePair;
+	var name;
+	var value;
+	for (var i = 0; i < nameValuePairs.length; i++) {
+	    nameValuePair = nameValuePairs[i].split(/=/);
+	    name = nameValuePair[0];
+	    value = nameValuePair[1];
+	    name = name.toLowerCase();
+	    if (name == "adnetwork" || name == "adn" || name == "src" || name == "POR" || name == "affid"  || name == "SSAID"){
+	      return true;
+	    }
+	  }
+
+	  var searchString = window.location.search.substring(1);
+	  var Parameters = new Object();
+	  var nameValuePairs = searchString.split(/&/);
+	  var nameValuePair;
+	  var name;
+	  var value;
+	  for (var i = 0; i < nameValuePairs.length; i++) {
+	      nameValuePair = nameValuePairs[i].split(/=/);
+	      name = nameValuePair[0];
+	      value = nameValuePair[1];
+	      name = name.toLowerCase();
+	        if (name == "adnetwork" || name == "adn" || name == "src" || name == "POR" || name == "affid"  || name == "SSAID"){
+	        return true;
+	      }
+	    }
+	  return false;
+}
+
+function removeSpaces(string) {
+ return string.split(' ').join('');
+}
+
+function addEvent(elm, evType, fn) {
+	if (elm.addEventListener) {
+		elm.addEventListener(evType, fn, false);
+		return true;
+	} else if (elm.attachEvent) {
+		var r = elm.attachEvent("on" + evType, fn);
+		return r;
+	} else {
+		elm["on" + evType] = fn;
+	 	}
+}function hideElements() {
+	  var childNodeListIMG = document.getElementsByTagName("img");
+	  for( i = 0; i <  childNodeListIMG.length ; i++){
+	  var itemNodeIMG = childNodeListIMG.item(i);
+		if(itemNodeIMG != null ){
+			var attributeNodeIMG = itemNodeIMG.attributes['src'];
+			if(attributeNodeIMG == null ){
+				attributeNodeIMG = itemNodeIMG.attributes['SRC'];
+			}
+			if(attributeNodeIMG != null ){
+				var valueIMG = attributeNodeIMG.value;
+				if((valueIMG != null) && ((valueIMG.indexOf("logo_preferred.gif") > 0) )){
+					itemNodeIMG.style.visibility = "hidden";
+				}
+			}
+		}
+	}
+	
+	var divs = document.getElementsByTagName("div");
+	for(var i = 0; i < divs.length; i++){
+	  if (divs[i].className == "zuri-top-link-bar") {
+	  	 divs[i].style.backgroundImage ="url('')";
+	  }
+	}
+	
+	var tripadd = document.getElementById("tripad_logos");
+	tripadd.style.visibility = "hidden";
+			
+}	
+			if (eval(isAffiliate())) {
+			hideElements();
+		}
+    
